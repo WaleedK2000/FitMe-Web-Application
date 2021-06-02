@@ -1,0 +1,123 @@
+
+        .button {
+            background-color: black;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 18px;
+            cursor: pointer
+        }
+
+        .button:hover {
+            background-color: grey;
+            color: black;
+        }
+
+        .button1:hover {
+            background-color: grey;
+            color: white;
+            border-color: white;
+        }
+
+        .button1 {
+            background-color: #FFFAFA;
+            border: sold;
+            border-color: black;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 18px;
+
+        }
+
+        .formh1 {
+            font-size: 5rem;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+            margin-top: 2rem;
+            margin-bottom: 0rem;
+
+        }
+
+        .formh2 {
+            font-size: 2.5rem;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+            margin-top: 1rem;
+            margin-bottom: 0rem;
+
+        }
+
+        .formlabel {
+            font-size: 2.5rem;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+            margin-top: 1rem;
+            margin-bottom: 0rem;
+            margin-right: 1rem;
+        }
+
+        input[type=text] {
+            border: none;
+            border-bottom: 2px solid black;
+            height: 2rem;
+            padding: 0.2rem, 0.2rem;
+            width: 17rem;
+        }
+
+        input[type=password] {
+            border: none;
+            border-bottom: 2px solid black;
+            height: 2rem;
+            padding: 0.2rem, 0.2rem;
+            width: 17rem;
+        }
+        #over img {
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        .formdiv {
+            border-radius: 18px;
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            float: right;
+            background-color: #FFFAFA;
+            border: 0.1rem solid;
+            border-color: black;
+            opacity: 100%;
+        }
+
+        .formLogin {
+            height: 60rem;
+            width: 45rem;
+            margin-right: 10rem;
+            margin-top: 10rem;
+        }
+
+        .outerdiv {
+            height: 5rem;
+            width: 30rem;
+            margin: auto;
+            padding-right: 20rem;
+            text-align: left;
+        }
+
+        .innerdiv {
+            height: 10rem;
+            width: 10rem;
+            margin: 2rem;
+            padding-right: 3rem;
+            box-sizing: border-box;
+            display: inline-block;
+        }
