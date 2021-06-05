@@ -11,6 +11,9 @@ if (isset($_POST["Login"])) {
     $pas = $_POST["pass"];
 
     $query = "SELECT user_email FROM login_d WHERE user_login = :userid_bv";
+
+    $query = "SELECT * FROM user_details WHERE user_id = :bv_login AND user_password = :bv_pass";
+
     $stid = oci_parse($con, $query);
 
     if (!$stid) {
@@ -18,20 +21,50 @@ if (isset($_POST["Login"])) {
         trigger_error(htmlentities($e['message']), E_USER_ERROR);
     }
 
-    echo oci_bind_by_name($stid, ":userid_bv", $id);
+    echo oci_bind_by_name($stid, ":bv_login", $id);
+    echo oci_bind_by_name($stid, ":bv_pass", $pas);
     $ex = oci_execute($stid);
 
-    $row = oci_fetch_array($stid);
-    //$rr = oci_fetch_row($stid);
+
+    echo "fetch";
+    //echo oci_fetch_all($stid, $row);
+    $rr = oci_fetch_row($stid);
+
+    if ($rr) {
+
+        echo $rr[4];
+
+        session_start();
+        $_SESSION["user_name"] = $rr[0];
+        $_SESSION["f_name"] = $rr[2];
+        $_SESSION["l_name"] = $rr[3];
+        $_SESSION["email"] = $rr[4];
+        $_SESSION["telnum"] = $rr[5];
+        $_SESSION["dob"] = $rr[6];
+        $_SESSION["weight"] = $rr[7];
+        $_SESSION["height"] = $rr[8];
+
+        header("location: ../landing_page.php");
+    } else {
+        echo '<h1>NOT FOUND!</h1> <br>';
+    }
+
 
     //echo $rr;
-    echo $row[0];
+    echo $id;
+    echo " ";
+    echo $pas;
+    echo "<br>";
+
     echo "<br>";
     if ($ex) {
         echo "yes";
     } else {
         echo "no";
     }
+
+
+
     //header("location: ../landing_pag.php");
 } else if (isset($_POST["signup"])) {
 

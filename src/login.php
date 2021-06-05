@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 
 <head>
     <link rel="stylesheet" href="ss/form.css">
@@ -39,14 +38,14 @@
                     <div class="innerdiv">
                         <label class="formlabel">Name</label>
                     </div>
-                    <div class="innerdiv"><input type="text" name="userid"></div>
+                    <div class="innerdiv_label"><input type="text" name="userid"></div>
                 </div>
 
                 <div class="outerdiv">
                     <div class="innerdiv">
                         <label class="formlabel">Password</label>
                     </div>
-                    <div class="innerdiv">
+                    <div class="innerdiv_label">
                         <input type="password" name="pass">
                     </div>
                 </div>
@@ -58,7 +57,7 @@
 
                 </div>
 
-                <div class="outerdiv" style="padding-left: 60px;">
+                <div class="outerdiv" style="padding-left: 70px;">
 
                     <div class="innerdiv">
                         <input class="button" name="Login" type="submit" value="Login">
