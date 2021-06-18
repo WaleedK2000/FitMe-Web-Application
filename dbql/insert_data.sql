@@ -113,7 +113,7 @@ VALUES(
 );
 
 
-//Trigger to automatically enter log_date
+--Trigger to automatically enter log_date
 CREATE OR REPLACE TRIGGER trg_daily_log_autodate 
 BEFORE INSERT ON daily_log
 FOR EACH ROW
@@ -122,7 +122,26 @@ BEGIN
 END;
 /
 
+--Following code adds auto number to plan (assigns plan_id automatically)
+CREATE SEQUENCE plan_seq START WITH 1;
+
+CREATE OR REPLACE TRIGGER plan_auto
+BEFORE INSERT ON plan
+FOR EACH ROW
+BEGIN
+        SELECT plan_seq.NEXTVAL
+        INTO :new.plan_id
+        FROM dual;
+END;
+/
+
+CREATE OR REPLACE PROCEDURE makeplan (u_id IN VARCHAR2, p_id OUT NUMBER )
 
 
+select PLAN.plan_id
+FROM plan 
+LEFT JOIN weekly_exercise_plan 
+ON plan.plan_id = weekly_exercise_plan.plan_id
+WHERE weekly_exercise_plan.plan_id IS NULL;
 
 
