@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 
 
+<head>
 
-
-
-
+</head>
 
 <body>
 
@@ -45,20 +44,22 @@
     <br>
     <br>
 
-    <form>
 
-        <?
-        while ($row = oci_fetch_array($stid, OCI_BOTH)) {
-        ?>
 
-            <input disabled type="text" name="name" value=<? echo $row[0]; ?>>
-            <input disabled type="text" name="scale" value=<? echo $row[1]; ?>>
-            <button type="submit" value="plan_id"> view </button>
+    <?
+    while ($row = oci_fetch_array($stid, OCI_BOTH)) {
+    ?>
 
-        <?
-        }
-        ?>
-    </form>
+        <form action="plan_det.php" method="$_GET">
+            <input disabled type="text" name="plan" value=<? echo $row[0]; ?>>
+            <input disabled type="text" name="by_uid" value=<? echo $row[1]; ?>>
+            <button type="submit" value=<? echo $row[0] ?> name="plan_set"> view </button>
+        </form>
+
+    <?
+    }
+    ?>
+
 
 </body>
 
