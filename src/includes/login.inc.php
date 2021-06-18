@@ -41,8 +41,9 @@ if (isset($_POST["Login"])) {
         $_SESSION["email"] = $rr[4];
         $_SESSION["telnum"] = $rr[5];
         $_SESSION["dob"] = $rr[6];
-        $_SESSION["weight"] = $rr[7];
-        $_SESSION["height"] = $rr[8];
+        $_SESSION["weight"] = $rr[8];
+        $_SESSION["height"] = $rr[7];
+        $_SESSION["plan_id"] = $rr[9];
 
         header("location: ../landing_page.php");
     } else {
