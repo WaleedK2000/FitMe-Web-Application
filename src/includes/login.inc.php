@@ -1,6 +1,6 @@
-// so far this script only prints user email from database. This will redirect to landing page <br>
-<?php
 
+<?php
+// so far this script only prints user email from database. This will redirect to landing page <br>
 if (isset($_POST["Login"])) {
     include_once 'dbcon.inc.php';
     $pas = $_POST["pass"];

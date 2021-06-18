@@ -1,4 +1,4 @@
-INSERT INTO user_details VALUES (
+INSERT INTO user_details (user_id,user_password,first_name,last_name,email,tel_num,dob,height,weight)  VALUES (
 	'wal_12',
 	'1234',
 	'Waleed',
@@ -6,7 +6,8 @@ INSERT INTO user_details VALUES (
 	'wal@wal.com',
 	'0312581741',
 	TO_DATE('17/12/2000' , 'DD/MM/YYYY'),
-	180
+	180,
+	85
 );
 
 INSERT INTO equipment VALUES (
@@ -26,7 +27,7 @@ INSERT INTO plan VALUES (
         'wal_12'
 );
 
-INSERT INTO excercise VALUES (
+INSERT INTO exercise VALUES (
         250,
         'Push-Ups',
         25,
@@ -34,14 +35,14 @@ INSERT INTO excercise VALUES (
 );
 
 
-INSERT INTO excercise VALUES (
+INSERT INTO exercise VALUES (
         251,
         'Planks',
         25,
         100
 );
 
-INSERT INTO weekly_excercise_plan VALUES (
+INSERT INTO weekly_exercise_plan VALUES (
         21,
         'MON',
         250,
@@ -49,7 +50,7 @@ INSERT INTO weekly_excercise_plan VALUES (
         200
 );
 
-INSERT INTO weekly_excercise_plan VALUES (
+INSERT INTO weekly_exercise_plan VALUES (
         21,
         'MON',
         251,
@@ -57,7 +58,7 @@ INSERT INTO weekly_excercise_plan VALUES (
         250
 );
 
-INSERT INTO weekly_excercise_plan VALUES (
+INSERT INTO weekly_exercise_plan VALUES (
         21,
         'TUE',
         250,
@@ -65,7 +66,7 @@ INSERT INTO weekly_excercise_plan VALUES (
         300
 );
 
-INSERT INTO weekly_excercise_plan VALUES (
+INSERT INTO weekly_exercise_plan VALUES (
         21,
         'SAT',
         250,
@@ -73,10 +74,55 @@ INSERT INTO weekly_excercise_plan VALUES (
         400
 );
 
-INSERT INTO weekly_excercise_plan VALUES (
+INSERT INTO weekly_exercise_plan VALUES (
         21,
         'SAT',
         251,
         2,
         300
 );
+
+INSERT INTO 
+
+//new
+
+ INSERT INTO user_details VALUES (
+	'kk12',
+	'1234',
+	'Waleed',
+	'Kha',
+	'wal@wal.com',
+	'0312581741',
+	TO_DATE('17/12/2000' , 'DD/MM/YYYY'),
+	180,
+	85
+);
+
+INSERT INTO daily_log (user_id,weight,intake)
+VALUES(
+	'kk12',
+	55,
+	2500
+);
+
+INSERT INTO weekly_exercise_plan (user_id,weight,intake)
+VALUES(
+	'kk12',
+	55,
+	2500
+);
+
+
+//Trigger to automatically enter log_date
+CREATE OR REPLACE TRIGGER trg_daily_log_autodate 
+BEFORE INSERT ON daily_log
+FOR EACH ROW
+BEGIN
+:new.log_date := sysdate;
+END;
+/
+
+
+
+
+
