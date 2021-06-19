@@ -35,6 +35,6 @@ oci_commit($con);
 echo "pid";
 echo $planid;
 
-$_SESSION["nplan_id"] = $planid;
+$_SESSION["plan_id"] = $planid;
 header("location: ../new_ex_plan.php");
 exit;

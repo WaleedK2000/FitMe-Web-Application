@@ -47,3 +47,5 @@ LEFT OUTER JOIN exercise ON exercise.ex_id  = weekly_exercise_plan.exercise_id
 LEFT OUTER JOIN equipment ON exercise.equipment_id = equipment.eq_id
 WHERE plan_id = 21 AND day_id = 'MON' 
 ORDER BY weekly_exercise_plan.order_allocated;
+
+

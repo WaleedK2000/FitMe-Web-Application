@@ -10,7 +10,7 @@
     <?
     session_start();
     echo "n id -- ";
-    $p_id = $_SESSION["nplan_id"];
+    $p_id = $_SESSION["plan_id"];
     echo $p_id;
     include_once './includes/dbcon.inc.php';
 
@@ -299,6 +299,10 @@
     <?
     }
     ?>
+
+    <form action="./add_nut.php">
+        <button>Proceed</button>
+    </form>
 
 </body>
 
