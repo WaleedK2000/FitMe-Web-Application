@@ -99,22 +99,29 @@
         }
 
         .formLogin {
-            height: 50rem;
+            height: 60rem;
             width: 45rem;
+            margin-right: 10rem;
+            margin-top: 3rem;
+        }
+
+        .formSignup {
+            height: 57rem;
+            width: 55rem;
             margin-right: 10rem;
             margin-top: 3rem;
         }
 
         .outerdiv {
             height: 5rem;
-            width: 40rem;
+            width: 45rem;
             /* margin: auto; */
             float: left;
         }
 
         .innerdiv {
             height: 3rem;
-            width: 12rem;
+            width: 18rem;
             margin-left: 4rem;
             display: inline-block;
         }

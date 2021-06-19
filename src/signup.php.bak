@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet" href="ss/form.css">
+    <link rel="stylesheet" href="ss/signup.css">
     <style>
         .center {
             display: block;
@@ -23,8 +23,8 @@
 
 
     <div>
-        <section class=" formLogin formdiv">
-            <form action="./includes/login.inc.php" method="POST">
+        <section class=" formSignup formdiv">
+            <form action="./includes/signup.inc.php" method="POST">
 
                 <h1 class="formh1">Fit-me</h1> <br>
 
@@ -32,7 +32,6 @@
                     <img src=" pic/logo.png" height="60px" width="120" alt="logo">
                 </div>
 
-                <h1 class="formh2">Sign into your Fit-me account</h1> <br>
 
                 <div class="outerdiv" style="padding-top: 20px;">
                     <div class="innerdiv">
@@ -51,10 +50,38 @@
                 </div>
 
                 <div class="outerdiv">
-
+                    <div class="innerdiv">
+                        <label class="formlabel">email</label>
+                    </div>
+                    <div class="innerdiv_label">
+                        <input type="text" name="email">
+                    </div>
                 </div>
                 <div class="outerdiv">
+                    <div class="innerdiv">
+                        <label class="formlabel">First Name</label>
+                    </div>
+                    <div class="innerdiv_label">
+                        <input type="text" name="fname">
+                    </div>
+                </div>
 
+                <div class="outerdiv">
+                    <div class="innerdiv">
+                        <label class="formlabel">Last Name</label>
+                    </div>
+                    <div class="innerdiv_label">
+                        <input type="text" name="lname">
+                    </div>
+                </div>
+
+                <div class="outerdiv">
+                    <div class="innerdiv">
+                        <label class="formlabel">Date of Birth</label>
+                    </div>
+                    <div class="innerdiv_label">
+                        <input type="text" name="lname">
+                    </div>
                 </div>
 
                 <div class="outerdiv" style="padding-left: 70px;">
@@ -66,6 +93,7 @@
                         <input class=" button1" name="signup" type="submit" value="Sign-Up">
                     </div>
                 </div>
+
 
             </form>
         </section>
