@@ -40,6 +40,7 @@
         //header("location: ./signup.php");
     } else if (isset($_POST["sw_pln"])) {
 
+        header("location: ./plan_sw_exit.php");
 
 
         //header("location: ./signup.php");
