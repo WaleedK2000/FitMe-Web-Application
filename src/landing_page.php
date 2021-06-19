@@ -32,7 +32,7 @@
     } else if (isset($_POST["sw_pln"])) {
         header("location: ./signup.php");
     } else if (isset($_POST["n_pln"])) {
-        header("location: ./signup.php");
+        header("location: ./includes/plan.inc.php");
     }
 
 

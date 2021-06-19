@@ -145,3 +145,8 @@ ON plan.plan_id = weekly_exercise_plan.plan_id
 WHERE weekly_exercise_plan.plan_id IS NULL;
 
 
+
+INSERT INTO weekly_exercise_plan VALUES (:P_ID, :DAY_ID, :EX_ID, DUR);
+
+select plan_seq.currval from dual;
+INSERT INTO plan (user_id) VALUES (user_id)
