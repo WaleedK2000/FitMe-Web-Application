@@ -122,6 +122,14 @@ BEGIN
 END;
 /
 
+CREATE OR REPLACE TRIGGER trg_daily_ex_log_autodate 
+BEFORE INSERT ON  exercise_log
+FOR EACH ROW
+BEGIN
+:new.EXERCISE_DATE := sysdate;
+END;
+/
+
 --Following code adds auto number to plan (assigns plan_id automatically)
 CREATE SEQUENCE plan_seq START WITH 1;
 

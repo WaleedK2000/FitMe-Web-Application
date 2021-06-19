@@ -14,11 +14,11 @@
     if (isset($_GET["uid"])) {
         echo "here";
         $uid = $_GET["uid"];
-        $query = "SELECT plan_id, user_id FROM plan WHERE user_id = :userid";
+        $query = "SELECT plan_id, created_by FROM plan WHERE created_by = :userid";
         $stid = oci_parse($con, $query);
         oci_bind_by_name($stid, ":userid", $uid);
     } else {
-        $query = "SELECT plan_id, user_id FROM plan";
+        $query = "SELECT plan_id, created_by FROM plan";
         $stid = oci_parse($con, $query);
     }
 

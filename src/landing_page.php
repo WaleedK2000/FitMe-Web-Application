@@ -15,6 +15,8 @@
 
     session_start();
 
+    echo $_SESSION["user_name"];
+
 
     echo "in";
     $s = $_POST["sub"];
@@ -22,15 +24,25 @@
     if (isset($_POST["view_plan"])) {
 
         if (isset($_SESSION["plan_id"])) {
-            header("location: ./signup.php");
+
+            $nam = "location: ./plan_det.php?plan_set=" . $_SESSION["plan_id"];
+
+            echo $nam;
+
+            header($nam);
             //view plan
         } else {
             echo "No plan selected <br>";
         }
     } else if (isset($_POST["daily_log"])) {
+        header("location: ./daily_log.php");
+
         //header("location: ./signup.php");
     } else if (isset($_POST["sw_pln"])) {
-        header("location: ./signup.php");
+
+
+
+        //header("location: ./signup.php");
     } else if (isset($_POST["n_pln"])) {
         header("location: ./includes/plan.inc.php");
     }
@@ -70,7 +82,7 @@
 
     $rr = oci_fetch_row($stid);
     $day = $rr[0];
-    $day = 'SAT';
+
     $add = "SELECT exercise.exercise_NAME, weekly_exercise_plan.duration, exercise.cal_burn_rate, ( weekly_exercise_plan.duration *  exercise.cal_burn_rate), weekly_exercise_plan.order_allocated, equipment.eq_name
     FROM weekly_exercise_plan
     LEFT OUTER JOIN exercise ON exercise.ex_id  = weekly_exercise_plan.exercise_id

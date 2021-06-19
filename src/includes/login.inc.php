@@ -26,7 +26,7 @@ if (isset($_POST["Login"])) {
     $ex = oci_execute($stid);
 
 
-    echo "fetch";
+
     //echo oci_fetch_all($stid, $row);
     $rr = oci_fetch_row($stid);
 

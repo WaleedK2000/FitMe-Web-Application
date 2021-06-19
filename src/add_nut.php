@@ -10,7 +10,7 @@
     <?
     session_start();
 
-    $p_id = $_SESSION["nplan_id"];
+    $p_id = $_SESSION["plan_id"];
 
     include_once './includes/dbcon.inc.php';
 
@@ -70,8 +70,6 @@
         $ex = oci_execute($stid);
 
         ?>
-
-
 
 
         <br>
