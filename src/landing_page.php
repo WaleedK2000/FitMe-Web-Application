@@ -46,6 +46,10 @@
         //header("location: ./signup.php");
     } else if (isset($_POST["n_pln"])) {
         header("location: ./includes/plan.inc.php");
+    } else if (isset($_POST["cal_con"])) {
+        header("location: ./rep_view_all_exlog.php");
+    } else if (isset($_POST["abc"])) {
+        header("location: ./rep_bmi.php");
     }
 
 
@@ -60,6 +64,9 @@
         <button name="daily_log" val="b">Enter Daily Log</button> <br>
         <button name="sw_pln" val="c">Switch to Another Existing Plan</button> <br>
         <button name="n_pln" val="d">Create and Switch To New Plan</button> <br>
+        <button name="cal_con" val="d">View Calories Consumed</button> <br>
+        <button name="abc" val="d">View BMI Report</button> <br>
+
     </form>
 
     <h2>Todays Planned Exercises</h2> <br>
