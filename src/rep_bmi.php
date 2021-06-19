@@ -14,7 +14,7 @@
 
     <input disabled type="text" name="excercise" value="Date">
     <input disabled type="text" name="excercise" value="Weight">
-    <input disabled type="text" name="excercise" value="Height">
+    <input disabled type="text" name="excercise" value="BMI">
 
 
 
@@ -25,7 +25,7 @@
 
     session_start();
     $username = $_SESSION["user_name"];
-    $query = "SELECT daily_log.log_date, daily_log.weight, (daily_log.weight/ user_details.height) 
+    $query = "SELECT daily_log.log_date, daily_log.weight, (daily_log.weight/ user_details.height)
     FROM daily_log
     INNER JOIN user_details ON daily_log.user_id = user_details.user_id 
     WHERE daily_log.user_id = :useid
