@@ -11,9 +11,10 @@
     session_start();
     echo "n id -- ";
     $p_id = $_SESSION["nplan_id"];
+    echo $p_id;
     include_once './includes/dbcon.inc.php';
 
-    if (isset($_POST["exercise_name"])) {
+    if (isset($_POST["duration"])) {
 
         $duration = $_POST["duration"];
         $ex_id = $_POST["exercise_name"];

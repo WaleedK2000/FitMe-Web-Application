@@ -1,7 +1,7 @@
 <?
 
 include_once 'dbcon.inc.php';
-$queA = "INSERT INTO plan (user_id) VALUES (:u_id)";
+$queA = "INSERT INTO plan (created_by) VALUES (:u_id)";
 session_start();
 $username = $_SESSION["user_name"];
 
@@ -31,6 +31,9 @@ oci_bind_by_name($stida, ":new_p_id", $planid);
 oci_bind_by_name($stida, ":user_id", $username);
 echo $ex = oci_execute($stida);
 oci_commit($con);
+
+echo "pid";
+echo $planid;
 
 $_SESSION["nplan_id"] = $planid;
 header("location: ../new_ex_plan.php");
